@@ -32,7 +32,30 @@ describe("#wordSearch()", function() {
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
     ], 'SEINFELD')
-
+    
     assert.isTrue(result);
   });
+  
+  it("should return true if the word is present", function() {
+    const result = wordSearch([
+      ['A', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'R', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'A', 'R', 'X', 'N', 'K', 'A', 'L'],
+      ['H', 'N', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'K', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'FRANK')
+
+    assert.isTrue(result);
+  })
+
+  it("should return false if empty array", function() {
+    const result = wordSearch([], 'FRANK')
+
+    assert.isFalse(result);
+  })
+  
 });
